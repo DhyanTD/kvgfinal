@@ -1,4 +1,62 @@
-
+body{
+    margin: 0;
+    background-color: #f1f1f1;
+    font-family: calibri, serif;
+  }
+  
+  .alert {
+    position: absolute;
+    right: 1em;
+    top: 30vh;
+    min-width: 150px;
+    font-size: 100%;
+    letter-spacing: 1px;
+    padding: 0.35em 1em;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    box-shadow: 0 1px 10px -3px #004e75, 0 1px 5px -3px #004e75;
+    animation: panaog 300ms linear;
+    z-index: 999;
+  }
+  .alert-info{
+    border: 0.5px solid #f1e100;
+    background-color: rgb(255, 238, 0);
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Animations
+  --------------------------------------------------------------*/
+  @-webkit-keyframes panaog {
+      0%{
+          opacity: 0;
+          transform: translateY(-100%);
+      }
+      100%{
+          opacity: 1;
+          transform: translateY(0%);
+      }
+  }
+  @-moz-keyframes panaog {
+      0%{
+          opacity: 0;
+          transform: translateY(-100%);
+      }
+      100%{
+          opacity: 1;
+          transform: translateY(0%);
+      }
+  }
+  @keyframes panaog { 
+      0%{
+          opacity: 0;
+          transform: translateY(-100%);
+      }
+      100%{
+          opacity: 1;
+          transform: translateY(0%);
+      }
+  }
 
 
 /*** Color Palettes ***/
