@@ -157,8 +157,9 @@ body {
 }
 
 #mdf_menu {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1031px;
+    /* margin: auto; */
+    margin-left: 15%;
     background-color: rgba(7, 41, 77, 0.98);
     position: relative;
     z-index: 999;
