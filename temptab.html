@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <script src="tab.js"></script>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            padding-top: 50px;
+            justify-content: center;
+            font-family: "Poppins", sans-serif;
+            background-color: var(--bg-gray);
+            color: #9baacf;
+        }
+        
+        :root {
+            --shadow-white: white;
+            --shadow-gray: #c8d0e7;
+            --bg-gray: #e4ebf5;
+            --text-purple: #6d5dfc;
+        }
+        
+        .tabs {
+            width: 90%;
+        }
+        
+        .tabs .tabs--nav {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px;
+            box-shadow: 1rem 0.3rem 0.6rem -0.6rem var(--shadow-gray),
+                -0.2rem -0.2rem 0.5rem var(--shadow-white);
+            border-radius: 1rem 1rem 0 0;
+            background-color: var(--bg-gray);
+        }
+        
+        .tabs .tabs--nav span {
+            padding: 15px;
+            display: block;
+            transition-delay: 0s;
+            transition-duration: 0.5s;
+            border-radius: 0.75rem;
+            cursor: pointer;
+        }
+        
+        .tabs .tabs--nav span.wait-animation {
+            pointer-events: none;
+        }
+        
+        .tabs .tabs--nav span:not(:first-of-type):not(:last-of-type) {
+            margin: 0 10px;
+        }
+        
+        .tabs .tabs--nav span.active {
+            color: var(--text-purple);
+            transition-delay: 0.25s;
+            transition-duration: 0.5s;
+        }
+        
+        .tabs .tabs--nav span:not(.active):hover {
+            /* 	box-shadow: inset 0.15em 0.15em 0.15em var(--shadow-white),
+                inset -0.15em -0.15em 0.15em var(--shadow-gray),
+                0.3rem 0.3rem 0.6rem var(--shadow-gray),
+                -0.3rem -0rem 0.6rem var(--shadow-white); */
+            box-shadow: inset 0.2rem 0.2rem 0.5rem var(--shadow-gray),
+                inset -0.2rem -0.2rem 0.5rem var(--shadow-white);
+        }
+        
+        .tabs .tabs--nav .tabs--fx {
+            position: absolute;
+            /* 	box-shadow: inset 0.2rem 0.2rem 0.5rem var(--shadow-gray),
+                inset -0.2rem -0.2rem 0.5rem var(--shadow-white); */
+            box-shadow: inset 0.15em 0.15em 0.15em var(--shadow-white),
+                inset -0.15em -0.15em 0.15em var(--shadow-gray),
+                0.3rem 0.3rem 0.6rem var(--shadow-gray),
+                -0.3rem -0rem 0.6rem var(--shadow-white);
+            border-radius: 0.75rem;
+            opacity: 0;
+        }
+        
+        .tabs .tabs--content {
+            padding: 20px;
+            box-shadow: 0.3rem 0.3rem 0.6rem var(--shadow-gray),
+                -0.2rem -0.2rem 0.5rem var(--shadow-white);
+            border-radius: 0 1rem 1rem 1rem;
+            background-color: var(--bg-gray);
+        }
+        
+        .tabs .tabs--content h2 {
+            color: var(--text-purple);
+        }
+        
+        .social-media {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+        }
+        
+        .social-media > * {
+            width: 60px;
+            height: 60px;
+            background-color: var(--bg-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: inset 0.15em 0.15em 0.15em var(--shadow-white),
+                inset -0.15em -0.15em 0.15em var(--shadow-gray),
+                0.3rem 0.3rem 0.6rem var(--shadow-gray),
+                -0.3rem -0rem 0.6rem var(--shadow-white);
+            border-radius: 50%;
+            margin: 5px;
+            transition: 0.3s;
+        }
+        
+        .social-media > *:hover {
+            transform: translateY(-5px);
+        }
+        
+        .fa-twitter {
+            color: #19a9dd;
+        }
+        
+        .fa-github,
+        .fa-codepen {
+            color: #010101;
+        }
+        
+        .fa-linkedin {
+            color: #19a9dd;
+        }
+        
+        .fa-instagram {
+            color: #ff0066;
+        }
+        
+    </style>
+    <div class="tabs">
+        <div class="tabs--nav">
+            <span>Tab 1</span>
+            <span>Tab 2</span>
+            <span>Tab 3</span>
+            <span>Tab 4</span>
+            <span>I like tabs :)</span>
+        </div>
+        <div class="tabs--content">
+            <div>
+                <h2>Item A</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore error impedit vero laborum a quasi, sit dolores quod sunt officia dolorum doloribus labore adipisci facilis earum voluptas ea, minima aut?</p>
+            </div>
+            <div>
+                <h2>Item B</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore error impedit vero laborum a quasi, sit dolores quod sunt officia dolorum doloribus labore adipisci facilis earum voluptas ea, minima aut? Lorem ipsum dolor sit amet consectetur adipisicing elit. In, soluta. Omnis quibusdam, corrupti distinctio quidem sunt, provident deleniti, voluptatem tempore dolorum quia sit consequuntur. Sit est quia deleniti sed tempora.</p>
+            </div>
+            <div>
+                <h2>Item C</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit iste at quae eveniet modi id ipsum, deserunt eligendi soluta tenetur asperiores odio! In porro consequatur ratione molestias nihil, sunt reprehenderit!
+                    Quae accusantium reiciendis deserunt eos ullam, quidem illo corrupti doloribus ex natus quibusdam saepe quis, quisquam iusto, quos sequi necessitatibus ducimus esse sapiente vel illum omnis nemo perspiciatis. Soluta, qui.
+                    Autem officia odit sequi deserunt. Adipisci nulla necessitatibus esse voluptatum harum quia incidunt id. Minus aspernatur magni sit mollitia repellat unde est aperiam excepturi aut, sunt ut expedita autem hic.</p>
+            </div>
+            <div>
+                <h2>Item D</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore error impedit vero laborum a quasi, sit dolores quod sunt officia dolorum doloribus labore adipisci facilis earum voluptas ea, minima aut?</p>
+            </div>
+            <div>
+                <h2>Item E</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore error impedit vero laborum a quasi, sit dolores quod sunt officia dolorum doloribus labore adipisci facilis earum voluptas ea, minima aut?</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="social-media">
+        <a href="https://github.com/datCloud/" title="Github" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/cloud_andrade" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://codepen.io/datCloud" title="Codepen" target="_blank"><i class="fab fa-codepen"></i></a>
+        <a href="https://www.instagram.com/datcloud42/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+</body>
+</html>
